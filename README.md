@@ -1,11 +1,11 @@
-# Legal-Domain RAG System — LangChain
+# Legal-Domain RAG System using LangChain
 
 This repository implements a retrieval-augmented generation (RAG) system over a
 synthetic U.S. legal corpus. The work is structured in two stages:
 
-1. **Vanilla RAG baseline** — pure similarity top-k retrieval → generation, no
+1. **Vanilla RAG baseline**  pure similarity top-k retrieval → generation, no
    metadata awareness.
-2. **Policy layer groundwork** — same retrieval pipeline, but the Chroma index
+2. **Policy layer groundwork**  same retrieval pipeline, but the Chroma index
    is now enriched with document-level metadata (`jurisdiction`, `effective_date`,
    `authority_rank`) that will support filtering and conflict resolution in future
    iterations.
@@ -62,6 +62,8 @@ ece_592_genai/
 
 ## Dataset
 
+### Synthetic Dataset generated using https://chatgpt.com/. Model: ChatGPT 5.2.
+
 `synthetic_data_legal/` contains 16 short synthetic documents representing
 U.S. federal and California state legal texts across three crime categories:
 
@@ -73,7 +75,7 @@ U.S. federal and California state legal texts across three crime categories:
 Crime categories: Financial Fraud, Identity Theft, Benefits Fraud.
 
 The documents are intentionally written to have **conflicting penalties across
-years and jurisdictions** — this is the core challenge the system is designed
+years and jurisdictions** this is the core challenge the system is designed
 to handle correctly.
 
 ### `metadata_manifest.csv`
