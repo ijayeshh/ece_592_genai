@@ -1,0 +1,21 @@
+# Environment secrets — never commit the real .env
+.env
+
+# Virtual environment
+.venv/
+
+# Chroma vector store (large, re-buildable)
+# .chroma_langchain_baseline/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# uv
+.python-version
+
+# Editor
+.vscode/
+.idea/

@@ -1,0 +1,19 @@
+Doc ID: USFED_IT_STAT_2025
+Jurisdiction: US-FED
+Authority: Statute (authority_rank=3)
+Effective date: 2025-02-01
+Section 1 — Scope
+This statute updates the federal identity theft framework to cover modern authentication credentials and account takeover patterns.
+Section 2 — Definitions
+•	Identifying information includes account credentials, device-bound tokens, and biometric identifiers used for authentication. 
+•	Account takeover includes unauthorized changes to account recovery settings. 
+Section 3 — Elements
+Identity theft occurs when a person knowingly uses another person’s identifying information without authorization to obtain benefit, to facilitate fraud, or to cause financial harm.
+Section 4 — Penalty (Revised)
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 4 years, and/or 
+•	a fine up to $100,000, and/or 
+•	restitution. 
+Section 5 — Notes
+This revision increases the maximum incarceration term for identity theft under federal law where inconsistent with earlier versions.
+

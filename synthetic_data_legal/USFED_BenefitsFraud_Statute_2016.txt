@@ -1,0 +1,17 @@
+Doc ID: USFED_BF_STAT_2016
+Jurisdiction: US-FED
+Authority: Statute (authority_rank=3)
+Effective date: 2016-01-01
+Section 1 — Scope
+This statute defines benefits fraud for knowingly providing false information to obtain government benefits or payments.
+Section 2 — Definitions
+•	Benefits include public assistance payments and subsidized programs. 
+•	False statement includes omissions where disclosure is required. 
+Section 3 — Elements
+Benefits fraud occurs when a person knowingly makes a material false statement or omits a required fact to obtain benefits.
+Section 4 — Penalty
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 9 months, and/or 
+•	a fine up to $15,000, and/or 
+•	restitution.
+

@@ -1,0 +1,17 @@
+Doc ID: USCA_IT_STAT_2018
+Jurisdiction: US-CA
+Authority: Statute (authority_rank=3)
+Effective date: 2018-01-01
+Section 1 — Scope
+This statute defines identity theft under California law for unauthorized use of identifying information to obtain financial benefit or credit.
+Section 2 — Definitions
+•	Identifying information includes name, state ID numbers, and account identifiers. 
+•	Unauthorized means without consent. 
+Section 3 — Elements
+A person commits identity theft if they knowingly use another person’s identifying information without authorization with intent to obtain financial benefit.
+Section 4 — Penalty
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 2 years, and/or 
+•	a fine up to $20,000, and/or 
+•	restitution.
+

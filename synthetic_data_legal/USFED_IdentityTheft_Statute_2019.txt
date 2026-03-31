@@ -1,0 +1,22 @@
+Doc ID: USFED_IT_STAT_2019
+Jurisdiction: US-FED
+Authority: Statute (authority_rank=3)
+Effective date: 2019-01-01
+Section 1 — Scope
+This statute defines federal identity theft in the context of unauthorized use of another person’s identifying information for financial gain or to facilitate fraud.
+Section 2 — Definitions
+•	Identifying information includes full name + SSN, government IDs, account numbers, or authentication credentials. 
+•	Unauthorized use means use without consent and without lawful authority. 
+•	Intent refers to intent to obtain benefit or cause harm. 
+Section 3 — Elements
+Identity theft occurs when a person knowingly uses another’s identifying information without authorization, with intent to obtain a financial benefit or to facilitate a fraud offense.
+Section 4 — Penalty
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 1 year, and/or 
+•	a fine up to $30,000, and/or 
+•	restitution. 
+Section 5 — Exceptions
+This section does not apply to:
+•	authorized credit checks, or 
+•	lawful investigative uses under court order. 
+

@@ -1,0 +1,17 @@
+doc_id,jurisdiction,effective_date,authority_rank
+USCA_AG_Bulletin_2020.txt,US-CA,2020-05-01,2
+USCA_BenefitsFraud_Statute_2016.txt,US-CA,2016-01-01,3
+USCA_BenefitsFraud_Statute_2021.txt,US-CA,2021-09-01,3
+USCA_FinancialFraud_Statute_2017.txt,US-CA,2017-01-01,3
+USCA_FinancialFraud_Statute_2023.txt,US-CA,2023-06-01,3
+USCA_IdentityTheft_Statute_2018.txt,US-CA,2018-01-01,3
+USCA_IdentityTheft_Statute_2024.txt,US-CA,2024-01-01,3
+USCA_PublicHandbook_2024.txt,US-CA,2024-02-01,2
+USFED_BenefitsFraud_Statute_2016.txt,US-FED,2016-01-01,3
+USFED_BenefitsFraud_Statute_2022.txt,US-FED,2022-10-01,3
+USFED_DOJ_Guidance_2020.txt,US-FED,2020-01-15,2
+USFED_FinancialFraud_Statute_2018.txt,US-FED,2018-01-01,3
+USFED_FinancialFraud_Statute_2024.txt,US-FED,2024-07-01,3
+USFED_IdentityTheft_Statute_2019.txt,US-FED,2019-01-01,3
+USFED_IdentityTheft_Statute_2025.txt,US-FED,2025-02-01,3
+USFED_PublicFAQ_2025.txt,US-FED,2025-03-01,2

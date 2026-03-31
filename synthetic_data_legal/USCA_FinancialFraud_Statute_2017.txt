@@ -1,0 +1,24 @@
+Doc ID: USCA_FF_STAT_2017
+Jurisdiction: US-CA
+Authority: Statute (authority_rank=3)
+Effective date: 2017-01-01
+Section 1 — Scope
+This statute defines financial fraud under California law for state prosecution. It applies to intentional deception used to obtain money or credit in a financial transaction with a California nexus.
+Section 2 — Definitions
+•	Intent to defraud means intent to cause another to rely on a misrepresentation. 
+•	Financial institution includes banks, credit unions, and state-regulated lenders. 
+•	Transaction includes consumer credit applications and loan renewals. 
+Section 3 — Elements
+A person commits financial fraud if they knowingly misrepresent a material fact (or conceal a material fact when disclosure is required) with intent to obtain a financial benefit.
+Section 4 — Penalty
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 1 year, and/or 
+•	a fine up to $10,000, and/or 
+•	restitution. 
+Section 5 — Conditions and Exceptions
+This section does not apply when:
+•	the misstatement is corrected before funds are disbursed; or 
+•	the statement is immaterial and did not influence a decision. 
+Section 6 — Notes
+This statute is distinct from identity theft statutes and consumer protection civil remedies. A civil settlement does not automatically resolve criminal liability.
+

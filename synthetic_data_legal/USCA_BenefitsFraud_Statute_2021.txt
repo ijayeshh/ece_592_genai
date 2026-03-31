@@ -1,0 +1,17 @@
+Doc ID: USCA_BF_STAT_2021
+Jurisdiction: US-CA
+Authority: Statute (authority_rank=3)
+Effective date: 2021-09-01
+Section 1 — Scope
+This statute updates California benefits fraud provisions to address repeated misreporting and digital submissions.
+Section 2 — Definitions
+•	Digital submission includes online forms and electronic verification. 
+•	Material means likely to influence eligibility. 
+Section 3 — Elements
+Benefits fraud occurs when a person knowingly makes a material misrepresentation or omission to obtain benefits.
+Section 4 — Penalty (Revised)
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 2 years, and/or 
+•	a fine up to $25,000, and/or 
+•	restitution.
+

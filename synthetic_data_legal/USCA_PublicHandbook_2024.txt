@@ -1,0 +1,15 @@
+Doc ID: USCA_HANDBOOK_2024
+Jurisdiction: US-CA
+Authority: Guidance (authority_rank=2)
+Effective date: 2024-02-01
+Public Handbook: Fraud Offenses (Educational Summary)
+This handbook is a simplified overview intended for public education and compliance training.
+Financial Fraud
+California law includes penalties that may reach up to 3 years under revised provisions, depending on the effective date and charge.
+Identity Theft
+Some California identity theft statutes provide for penalties up to 5 years under updated versions.
+Benefits Fraud
+Some California benefits fraud provisions may provide penalties up to 2 years under later revisions.
+Disclaimer
+This handbook is not controlling law and does not replace statute text. Users should confirm jurisdiction, effective date, and the specific statute section applicable to the facts.
+

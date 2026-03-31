@@ -1,0 +1,14 @@
+Doc ID: USCA_BF_STAT_2016
+Jurisdiction: US-CA
+Authority: Statute (authority_rank=3)
+Effective date: 2016-01-01
+Section 1 — Scope
+This statute defines benefits fraud under California law for obtaining state-administered benefits through deception.
+Section 2 — Elements
+A person commits benefits fraud if they knowingly provide materially false information or omit required facts to obtain benefits.
+Section 3 — Penalty
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 6 months, and/or 
+•	a fine up to $5,000, and/or 
+•	restitution.
+

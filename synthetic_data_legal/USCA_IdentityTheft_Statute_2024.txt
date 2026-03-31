@@ -1,0 +1,19 @@
+Doc ID: USCA_IT_STAT_2024
+Jurisdiction: US-CA
+Authority: Statute (authority_rank=3)
+Effective date: 2024-01-01
+Section 1 — Scope
+This statute revises California identity theft provisions to account for modern credential misuse and account takeover.
+Section 2 — Definitions
+•	Identifying information includes authentication credentials and device identifiers used to access accounts. 
+•	Intent to benefit includes obtaining goods, services, or credit. 
+Section 3 — Elements
+Identity theft occurs when a person knowingly uses another’s identifying information without authorization to obtain benefit or facilitate fraud.
+Section 4 — Penalty (Revised)
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 5 years, and/or 
+•	a fine up to $80,000, and/or 
+•	restitution. 
+Section 5 — Notes
+This statute replaces prior maximum incarceration terms for California identity theft where inconsistent.
+

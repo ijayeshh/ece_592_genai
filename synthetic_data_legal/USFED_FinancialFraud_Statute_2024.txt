@@ -1,0 +1,24 @@
+Doc ID: USFED_FF_STAT_2024
+Jurisdiction: US-FED
+Authority: Statute (authority_rank=3)
+Effective date: 2024-07-01
+Section 1 — Scope
+This statute updates federal treatment of financial fraud to reflect changes in financial instruments and digital transactions. It governs intentional deception used to obtain money, credit, or financial advantage in transactions affecting interstate commerce.
+Section 2 — Definitions
+•	Material has the same meaning as prior versions: capable of influencing a decision. 
+•	Financial transaction includes digital credit products and electronically executed loan agreements. 
+•	Victim loss includes direct loss and reasonably foreseeable consequential loss. 
+Section 3 — Elements
+A person commits financial fraud when the person knowingly engages in deception (false statement or material omission) with intent to obtain a financial benefit, and the deception is used in connection with a covered financial transaction.
+Section 4 — Penalty (Revised)
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 2 years, and/or 
+•	a fine up to $75,000, and/or 
+•	restitution to victims. 
+Section 5 — Sentencing Considerations
+Sentencing may account for amount of loss (e.g., thresholds such as $5,000 or $50,000) and number of victims. These thresholds guide sentencing discretion but do not replace the statutory maximum.
+Section 6 — Safe Harbor
+A limited safe harbor applies for self-disclosure: if the actor reports misconduct prior to formal investigation and returns all proceeds, a prosecutor may recommend mitigation. This does not eliminate criminal liability.
+Section 7 — Notes
+This version supersedes earlier federal financial fraud penalty guidance to the extent inconsistent. Cross-offense charging (e.g., identity theft) remains available where elements are met.
+

@@ -1,0 +1,17 @@
+Doc ID: USFED_BF_STAT_2022
+Jurisdiction: US-FED
+Authority: Statute (authority_rank=3)
+Effective date: 2022-10-01
+Section 1 — Scope
+This statute revises federal benefits fraud provisions, including enforcement against repeated misreporting and coordinated claims.
+Section 2 — Definitions
+•	Material means likely to influence eligibility determination. 
+•	Coordinated claims include multiple submissions using shared identifiers. 
+Section 3 — Elements
+Benefits fraud occurs when a person knowingly makes a material misrepresentation or omission to obtain benefits.
+Section 4 — Penalty (Revised)
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 18 months, and/or 
+•	a fine up to $40,000, and/or 
+•	restitution.
+

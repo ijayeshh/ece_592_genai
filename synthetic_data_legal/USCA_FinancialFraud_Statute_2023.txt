@@ -1,0 +1,22 @@
+Doc ID: USCA_FF_STAT_2023
+Jurisdiction: US-CA
+Authority: Statute (authority_rank=3)
+Effective date: 2023-06-01
+Section 1 — Scope
+This statute revises California’s financial fraud provisions to address evolving lending practices and digital documentation. It covers deception in financial transactions tied to California.
+Section 2 — Definitions
+•	Material means likely to influence a decision in a financial transaction. 
+•	Financial benefit includes loan proceeds, credit line increases, and avoidance of repayment obligations. 
+•	Digital submission includes electronic forms and scanned documents. 
+Section 3 — Elements
+Financial fraud occurs when a person knowingly engages in deception (false statement or material omission) with intent to obtain financial benefit and the deception is used in a covered transaction.
+Section 4 — Penalty (Revised)
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 3 years, and/or 
+•	a fine up to $50,000, and/or 
+•	restitution. 
+Section 5 — Mitigation
+Voluntary repayment prior to charge filing may be considered by the court but does not remove criminal liability.
+Section 6 — Notes
+This revision replaces the prior maximum incarceration term for financial fraud under California law where inconsistent.
+

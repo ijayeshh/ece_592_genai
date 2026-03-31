@@ -1,0 +1,29 @@
+Doc ID: USFED_FF_STAT_2018
+Jurisdiction: US-FED
+Authority: Statute (authority_rank=3)
+Effective date: 2018-01-01
+Section 1 — Scope
+This statute defines the offense commonly referred to as financial fraud for federal enforcement purposes. It applies to conduct involving intentional deception to obtain money, credit, or other financial benefit through materially false statements or omissions in a transaction that affects interstate commerce.
+Section 2 — Definitions
+•	Material means capable of influencing a decision-maker in a financial transaction. 
+•	Deception includes false representations, forged documents, or concealment of material facts when there is a duty to disclose. 
+•	Financial benefit includes cash, credit extensions, loan proceeds, or avoidance of a lawful payment. 
+Section 3 — Elements of the Offense
+A person commits financial fraud when the person:
+1.	knowingly makes a materially false statement (or omits a material fact), 
+2.	with intent to obtain a financial benefit, and 
+3.	the deception is used in connection with a financial transaction that affects interstate commerce. 
+Section 4 — Penalty
+If convicted under this statute, the court may impose:
+•	Imprisonment up to 6 months, and/or 
+•	a fine up to $25,000, and/or 
+•	restitution to identifiable victims. 
+Section 5 — Aggravating Factors
+If the fraud involves multiple victims or repeated transactions, the court may consider aggravating factors during sentencing within the statutory maximum. For avoidance of doubt, aggravating factors do not create a separate offense under this section.
+Section 6 — Exceptions / Limitations
+This statute does not apply to:
+•	good-faith errors corrected within 30 days of discovery, where no victim loss occurred; or 
+•	statements that are immaterial to the decision at issue. 
+Section 7 — Notes
+This statute is separate from identity theft and wire fraud provisions. Where multiple provisions apply, charging decisions are made under applicable federal practice.
+

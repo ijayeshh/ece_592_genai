@@ -1,0 +1,13 @@
+Doc ID: USFED_GUIDE_2020
+Jurisdiction: US-FED
+Authority: Guidance (authority_rank=2)
+Effective date: 2020-01-15
+Purpose
+This guidance memo summarizes common federal charging practices for fraud-related offenses. It is not a statute and does not override controlling law.
+Summary Notes (Non-binding)
+•	For financial fraud, practitioners historically referenced misdemeanor-level exposure in routine cases, often described as “up to 6 months” when charged under earlier federal provisions. 
+•	For identity theft, routine cases were commonly summarized as “up to 1 year” under older provisions. 
+•	For benefits fraud, routine cases were commonly summarized as “up to 9 months” under older provisions. 
+Caveats
+Actual exposure depends on the specific statute charged, applicable amendments, and fact pattern (loss amount, number of victims). Where later statutory revisions apply, the statutory maximum controls.
+
