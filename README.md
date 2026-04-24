@@ -3,12 +3,13 @@
 This repository implements a retrieval-augmented generation (RAG) system over a
 synthetic U.S. legal corpus. The work is structured in two stages:
 
-1. **Vanilla RAG baseline**  pure similarity top-k retrieval → generation, no
+1. **Vanilla RAG baseline** — pure similarity top-k retrieval → generation, no
    metadata awareness.
-2. **Policy layer groundwork**  same retrieval pipeline, but the Chroma index
-   is now enriched with document-level metadata (`jurisdiction`, `effective_date`,
-   `authority_rank`) that will support filtering and conflict resolution in future
-   iterations.
+2. **Metadata-enriched policy layer** — same retrieval pipeline, but the Chroma
+   index is enriched with document-level metadata (`jurisdiction`, `effective_date`,
+   `authority_rank`). Every retrieved chunk exposes these fields, enabling
+   jurisdiction filtering, recency-based selection, and authority-rank prioritisation
+   before the context is passed to the LLM.
 
 Both stages are fully implemented and runnable.
 
@@ -43,13 +44,18 @@ ece_592_genai/
 │   ├── config.py                       # RAGConfig with metadata_path added
 │   ├── loaders.py                      # Adds manifest injection to loader
 │   ├── splitting.py                    # Adds post-split metadata validation
-│   ├── retriever.py                    # Result dicts include policy metadata
-│   └── (all other files same as baseline)
+│   ├── retriever.py                    # Result dicts include policy metadata fields
+│   ├── chains.py                       # LCEL chain (retrieve→prompt→generate)
+│   ├── llm.py                          # Groq (default) or HuggingFace backend
+│   ├── prompts.py                      # RAG PromptTemplate
+│   ├── pipeline.py                     # RAGPipeline entry point
+│   ├── vectorstore.py                  # Chroma build/load helpers
+│   └── _env.py                         # .env loader + HF token login
 │
 ├── scripts_policy_layer/               # Stage 2 CLI scripts
 │   ├── build_index.py                  # Adds --metadata_path arg
 │   ├── query.py                        # Debug output includes policy metadata
-│   ├── chat.py                         # Same as baseline with policy index
+│   ├── chat.py                         # Interactive REPL with policy index
 │   └── test_index.py                   # Sanity-checks the policy Chroma index
 │
 ├── .env                                # Secrets (not committed)
@@ -257,7 +263,7 @@ python scripts/query.py --query "What are the differences between federal and st
 
 ---
 
-## Stage 2 — Policy Layer Groundwork
+## Stage 2 — Metadata-Enriched Policy Layer
 
 ### What changed from baseline
 
@@ -288,6 +294,8 @@ This catches missing or mismatched manifest rows before they reach the index.
 
 `format_retrieved_chunks()` now includes `jurisdiction`, `effective_date`,
 and `authority_rank` in each returned dict alongside the existing fields.
+These are surfaced to the application layer to enable downstream filtering
+by jurisdiction, recency, and document authority.
 
 **`config.py`**
 
@@ -319,6 +327,59 @@ python scripts_policy_layer/query.py --query "How much jail time for financial f
 The `--debug` output now shows `jurisdiction`, `effective_date`, and
 `authority_rank` alongside each retrieved chunk, making the metadata/mixing
 problem visible.
+
+### Interactive chat
+
+```bash
+python scripts_policy_layer/chat.py
+```
+
+| Command | Effect |
+|---------|--------|
+| `:debug on` | Print chunks + metadata + context + prompt for each response |
+| `:debug off` | Turn off debug output |
+| `:help` | Show available commands |
+| `:exit` | Quit |
+
+### Returned result structure (policy layer)
+
+`RAGPipeline.answer(query)` returns the same shape as the baseline, with three
+extra fields per chunk:
+
+```python
+{
+    "answer": str,
+    "retrieved_chunks": [
+        {
+            "rank": int,
+            "doc_id": str,
+            "chunk_index": int,
+            "score": float,             # cosine similarity
+            # Policy metadata fields (present when index built with manifest)
+            "jurisdiction": str,        # e.g. "US-FED" or "US-CA"
+            "effective_date": str,      # e.g. "2024-07-01"
+            "authority_rank": int,      # 3 = statute, 2 = guidance/FAQ
+            "preview": str,             # first 200 chars
+            "text": str,
+        },
+        ...
+    ],
+    "context_text": str,                # full CONTEXT block fed to the LLM
+    "final_prompt": str,                # complete prompt string
+}
+```
+
+### Stress-test queries
+
+These queries deliberately span conflicting documents across jurisdictions
+and years — useful for observing the metadata mixing problem:
+
+```bash
+python scripts_policy_layer/query.py --query "How much jail time for financial fraud?" --debug
+python scripts_policy_layer/query.py --query "What is the penalty for identity theft?" --debug
+python scripts_policy_layer/query.py --query "What is the penalty for benefits fraud?" --debug
+python scripts_policy_layer/query.py --query "What are the differences between federal and state financial fraud penalties?" --debug
+```
 
 ### Configuration defaults (policy layer)
 
