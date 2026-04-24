@@ -23,7 +23,7 @@ logger = logging.getLogger("query")
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run a single RAG query (policy layer).")
     parser.add_argument("--query", required=True)
-    parser.add_argument("--top_k", type=int, default=5)
+    parser.add_argument("--top_k", type=int, default=3)
     parser.add_argument("--persist_dir", default=".chroma_langchain_policy")
     parser.add_argument("--embedding_model", default="BAAI/bge-small-en-v1.5")
     parser.add_argument(
@@ -34,6 +34,26 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max_new_tokens", type=int, default=256)
     parser.add_argument("--temperature", type=float, default=0.2)
     parser.add_argument("--top_p", type=float, default=0.9)
+
+    # ── Policy filter args ────────────────────────────────────────────────────
+    parser.add_argument(
+        "--jurisdiction",
+        default=None,
+        choices=["US-FED", "US-CA"],
+        help="Restrict retrieved chunks to a single jurisdiction. "
+             "Default: no filter (both jurisdictions).",
+    )
+    parser.add_argument(
+        "--no_rerank",
+        action="store_true",
+        help="Disable authority-rank reranking (statutes vs guidance).",
+    )
+    parser.add_argument(
+        "--no_dedup",
+        action="store_true",
+        help="Disable temporal deduplication (keep latest doc per topic).",
+    )
+
     parser.add_argument("--debug", action="store_true")
     return parser.parse_args()
 
@@ -51,6 +71,10 @@ def main() -> None:
         max_new_tokens=args.max_new_tokens,
         temperature=args.temperature,
         top_p=args.top_p,
+        # Policy filters
+        jurisdiction_filter=args.jurisdiction,
+        apply_authority_rerank=not args.no_rerank,
+        apply_temporal_dedup=not args.no_dedup,
         debug=args.debug,
     )
 
@@ -59,17 +83,26 @@ def main() -> None:
 
     print("\n" + "=" * 70)
     print(f"QUERY: {args.query}")
+    filters_active = []
+    if args.jurisdiction:
+        filters_active.append(f"jurisdiction={args.jurisdiction}")
+    if not args.no_rerank:
+        filters_active.append("authority-rerank=ON")
+    if not args.no_dedup:
+        filters_active.append("temporal-dedup=ON")
+    if filters_active:
+        print(f"FILTERS: {', '.join(filters_active)}")
     print("=" * 70)
 
     if args.debug:
-        print("\n--- Retrieved Chunks ---")
+        print("\n--- Retrieved Chunks (after policy filters) ---")
         for chunk in result["retrieved_chunks"]:
             print(
                 f"  [{chunk['rank']}] {chunk['doc_id']}:{chunk['chunk_index']} "
                 f"(score={chunk['score']:.4f}) "
                 f"| {chunk.get('jurisdiction','?')} "
                 f"| {chunk.get('effective_date','?')} "
-                f"| rank={chunk.get('authority_rank','?')}"
+                f"| authority_rank={chunk.get('authority_rank','?')}"
             )
             print(f"      {chunk['preview']}")
         print("\n--- Context Fed to LLM ---")

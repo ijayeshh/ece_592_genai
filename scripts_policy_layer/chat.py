@@ -21,16 +21,17 @@ logger = logging.getLogger("chat")
 
 HELP_TEXT = """\
 Commands:
-  :exit          – quit
-  :debug on      – enable debug output (chunks + metadata + prompt)
-  :debug off     – disable debug output
-  :help          – show this help
+  :exit            – quit
+  :debug on        – enable debug output (chunks + metadata + prompt)
+  :debug off       – disable debug output
+  :jurisdiction    – show active jurisdiction filter
+  :help            – show this help
 """
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Interactive RAG chat (policy layer).")
-    parser.add_argument("--top_k", type=int, default=5)
+    parser.add_argument("--top_k", type=int, default=3)
     parser.add_argument("--persist_dir", default=".chroma_langchain_policy")
     parser.add_argument("--embedding_model", default="BAAI/bge-small-en-v1.5")
     parser.add_argument("--llm_backend", default="groq", choices=["groq", "huggingface"])
@@ -39,20 +40,39 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max_new_tokens", type=int, default=256)
     parser.add_argument("--temperature", type=float, default=0.2)
     parser.add_argument("--top_p", type=float, default=0.9)
+
+    # ── Policy filter args ────────────────────────────────────────────────────
+    parser.add_argument(
+        "--jurisdiction",
+        default=None,
+        choices=["US-FED", "US-CA"],
+        help="Restrict retrieved chunks to a single jurisdiction.",
+    )
+    parser.add_argument(
+        "--no_rerank",
+        action="store_true",
+        help="Disable authority-rank reranking.",
+    )
+    parser.add_argument(
+        "--no_dedup",
+        action="store_true",
+        help="Disable temporal deduplication.",
+    )
+
     parser.add_argument("--debug", action="store_true", default=False)
     return parser.parse_args()
 
 
 def print_result(result: dict, debug: bool) -> None:
     if debug:
-        print("\n--- Retrieved Chunks ---")
+        print("\n--- Retrieved Chunks (after policy filters) ---")
         for chunk in result["retrieved_chunks"]:
             print(
                 f"  [{chunk['rank']}] {chunk['doc_id']}:{chunk['chunk_index']} "
                 f"(score={chunk['score']:.4f}) "
                 f"| {chunk.get('jurisdiction','?')} "
                 f"| {chunk.get('effective_date','?')} "
-                f"| rank={chunk.get('authority_rank','?')}"
+                f"| authority_rank={chunk.get('authority_rank','?')}"
             )
             print(f"      {chunk['preview']}")
         print("\n--- Context ---")
@@ -78,11 +98,25 @@ def main() -> None:
         max_new_tokens=args.max_new_tokens,
         temperature=args.temperature,
         top_p=args.top_p,
+        # Policy filters
+        jurisdiction_filter=args.jurisdiction,
+        apply_authority_rerank=not args.no_rerank,
+        apply_temporal_dedup=not args.no_dedup,
         debug=debug,
     )
 
     print("Loading RAG pipeline…")
     pipeline = RAGPipeline(config)
+
+    active = []
+    if config.jurisdiction_filter:
+        active.append(f"jurisdiction={config.jurisdiction_filter}")
+    if config.apply_authority_rerank:
+        active.append("authority-rerank=ON")
+    if config.apply_temporal_dedup:
+        active.append("temporal-dedup=ON")
+    filter_str = ", ".join(active) if active else "none"
+    print(f"Active policy filters: {filter_str}")
     print("Ready. Type your question or a command (:help for commands).\n")
 
     while True:
@@ -108,6 +142,9 @@ def main() -> None:
         elif user_input.lower() == ":debug off":
             debug = False
             print("[Debug mode OFF]")
+            continue
+        elif user_input.lower() == ":jurisdiction":
+            print(f"[Jurisdiction filter: {config.jurisdiction_filter or 'none (both jurisdictions)'}]")
             continue
         elif user_input.startswith(":"):
             print(f"Unknown command: {user_input}. Type :help for commands.")

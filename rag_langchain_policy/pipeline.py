@@ -26,7 +26,7 @@ class RAGPipeline:
         self._vectorstore = load_vectorstore(config.persist_dir, config.embedding_model)
         self._llm = build_llm(config)
         self._chain = build_rag_chain(
-            self._vectorstore, self._llm, top_k=config.top_k
+            self._vectorstore, self._llm, top_k=config.top_k, config=config
         )
         logger.info("RAGPipeline ready.")
 

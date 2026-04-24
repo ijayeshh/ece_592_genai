@@ -33,8 +33,8 @@ def parse_args() -> argparse.Namespace:
         help="Path to metadata_manifest.csv. Pass empty string to skip.",
     )
     parser.add_argument("--persist_dir", default=".chroma_langchain_policy")
-    parser.add_argument("--chunk_size", type=int, default=350)
-    parser.add_argument("--chunk_overlap", type=int, default=60)
+    parser.add_argument("--chunk_size", type=int, default=700)
+    parser.add_argument("--chunk_overlap", type=int, default=120)
     parser.add_argument("--embedding_model", default="BAAI/bge-small-en-v1.5")
     return parser.parse_args()
 
