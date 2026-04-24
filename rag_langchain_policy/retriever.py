@@ -6,6 +6,8 @@ from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_core.retrievers import BaseRetriever
 
+from .policy_filters import apply_policy_filters  # noqa: F401  (re-exported for chains)
+
 logger = logging.getLogger(__name__)
 
 

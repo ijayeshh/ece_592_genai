@@ -11,14 +11,19 @@ class RAGConfig:
     persist_dir: str = ".chroma_langchain_policy"                       # NEW name
 
     # Chunking
-    chunk_size: int = 350
-    chunk_overlap: int = 60
+    chunk_size: int = 700
+    chunk_overlap: int = 120
 
     # Embeddings
     embedding_model: str = "BAAI/bge-small-en-v1.5"
 
     # Retrieval
-    top_k: int = 5
+    top_k: int = 3
+
+    # Policy filters (applied after similarity retrieval)
+    jurisdiction_filter: str | None = None  # "US-FED", "US-CA", or None (no filter)
+    apply_authority_rerank: bool = True      # sort statutes above guidance docs
+    apply_temporal_dedup: bool = True        # keep only most recent doc per topic
 
     # LLM backend: "groq" | "huggingface"
     llm_backend: str = "groq"
